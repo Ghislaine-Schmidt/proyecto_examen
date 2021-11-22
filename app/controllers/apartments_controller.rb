@@ -1,4 +1,12 @@
 class ApartmentsController < ApplicationController
+    def index
+        @apartments = Apartment.all
+    end
+
+    def show
+        @apartment = Apartment.find(params[ :id])
+    end
+
     def new
         @building = Building.find(params[:building_id])
         @apartment = Apartment.new
